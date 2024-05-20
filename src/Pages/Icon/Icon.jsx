@@ -8,7 +8,7 @@ function Icon({cart}) {
             <div className={Style.main}>
             {
                 cart.map((c)=>{
-                    return <Carts cart={c} key={c.id}/>
+                    return <Carts cart={c} key={c.id} addBtnsClicks={addBtnsClicks}/>
                 })
             }
             </div>

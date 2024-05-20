@@ -1,0 +1,12 @@
+.btn{
+    height: 30px;
+    width: 30px;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}

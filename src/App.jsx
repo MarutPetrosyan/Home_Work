@@ -7,16 +7,26 @@ import Icon from './Pages/Icon/Icon'
 import { useState } from 'react'
 
 
-function App({product}) {
-  const [cart, setCart]=  useState([])
+function App({ product }) {
+  const [cart, setCart] = useState([])
+
+  const addBtnsClicks = (count) => {
+    setCart(cart.map((el)=>{
+      return {
+        ...el,
+        count : count,
+        initprice : el.price * count
+      }
+    }))
+  }
 
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Loyout/>}>
-        <Route index element={<Home/>}/>
-          <Route path='/product' element={<Product product={product} setCart={setCart}/>}/>
-        <Route path='/icon' element={<Icon cart={cart}/>}/>
+        <Route path='/' element={<Loyout />}>
+          <Route index element={<Home />} />
+          <Route path='/product' element={<Product product={product} setCart={setCart} />} />
+          <Route path='/icon' element={<Icon cart={cart} addBtnsClicks={addBtnsClicks}/>} />
         </Route>
       </Routes>
     </div>
